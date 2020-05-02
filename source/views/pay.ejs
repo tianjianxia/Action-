@@ -1,0 +1,61 @@
+<%- include("partials/headerPre") %>
+	</head>
+	<body class = "content" style = "width: 1500px;
+    height: 800px;
+    margin: 0px;
+    background: beige
+        margin: 0;
+        padding: 0;
+        background: url('http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG');
+        repeat: no-repeat;
+        background-attachment:fixed;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;">
+<h1 style = "font-size: 80px;
+    padding-top: 200px;
+    text-align: center;
+    color: #FFFFFF;">This is the pay route</h1>
+  <form action="/pay/<%= projectId %>" method="POST">
+   <input type="number" name="bid" placeholder="Put the amount you want to donate." style = "margin-left: 500px;
+    border:1px ;
+    width:500px;
+    height:50px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:50px;
+    font-size:24px;">
+<div align = "center">
+   <button style = "width: 200px;
+        padding:1px;
+        background-color: #428bca;
+        border-color: #357ebd;
+        color: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; 
+        -khtml-border-radius: 10px; 
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%;
+   	background:#FC3;	
+    	width:100px;
+   	 height:36px;
+    	margin-top:50px;
+   	 border-radius:30px">Donate</button>
+</div>
+  </form>
+  <p style = "margin-top: 50px;
+text-align:center;
+color: #FFFFFF;">Powered By Stripe.</p >
+<div align="center">
+<img src = "https://stripe.com/img/v3/home/twitter.png" style = "width:100px;
+height:100px;">
+</div>
+
+<%- include("partials/footer") %>

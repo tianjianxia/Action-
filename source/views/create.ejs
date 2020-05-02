@@ -1,0 +1,82 @@
+<%- include("partials/headerPre") %>
+<style>
+	body{
+		width: 1500px;
+    	height: 800px;
+    	margin: 0px;
+    	background: beige
+        margin: 0;
+        padding: 0;
+        background: url('http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG');
+        repeat: no-repeat;
+        background-attachment:fixed;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+	}
+</style>
+<%- include("partials/headerPost") %>
+<%- include("partials/navbar") %>
+<div>
+<h1 style = "font-size: 80px;
+    padding-top: 200px;
+    text-align: center;
+    color: #FFFFFF;">Create Your Own Script Project</h1>
+<form action="/create" method="POST">
+    <input type="text" name="title" placeholder="Project title" style = "margin-left: 600px;
+    border:1px ;
+    width:500px;
+    height:50px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:50px;
+    font-size:24px;">
+    <textarea class = "abc" id = "textArea" name="desc" placeholder="                                                                Description of your project" style = "margin-left: 600px;
+    border:1px ;
+    width:500px;
+    height:200px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:50px;
+    font-size:24px;
+	line-height: 50px"></textarea>
+    <input type="number" name="bid" placeholder="Expected crowdfunding amount" style = "margin-left: 600px;
+    border:1px ;
+    width:500px;
+    height:50px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:50px;
+    font-size:24px;">
+  <div class = "one" style = "margin-left: 700px;">
+        <table>    
+<button style = "width: 200px;
+        padding:1px;
+        background-color: #428bca;
+        border-color: #357ebd;
+        color: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%;
+    	background:#FC3;
+    	width:100px;
+    	height:36px;
+    	margin-top:50px;
+    	margin-left:100px;
+    	border-radius:30px;">Submit!</button>
+      </table>
+    </div>
+</form>
+</div>
+<%- include("partials/footer") %>
