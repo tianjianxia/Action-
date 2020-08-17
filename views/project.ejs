@@ -1,0 +1,53 @@
+<%- include("partials/headerPre") %>
+<style>
+	body {
+		background: url("https://pic.52112.com/180713/JPG-180713_468/LmDEQsZuSA_small.jpg");
+		background-size: cover
+	}
+</style>
+<%- include("partials/headerPost") %>
+<%- include("partials/navbar") %>
+<ul>
+	
+	<div class = "container">
+		<div class="row">
+			<div>
+				<div class="col-md-5 left aligned">
+					<li><img src="https://tvguide1.cbsistatic.com/rovi/showcards/movie/130677/16930914.jpg" class="img-responsive" alt="Responsive image" width = "700px" height= "100px"></li>
+				</div>
+				<div class="col-md-7">
+					<li><h1 style = "color: white"><%= project.projectName %></h1></li>
+					<div class = "container" style="margin-left: 50px">
+						<li style = "color: white"><%= project.desc %></li>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "row">
+			<div>
+				<div class="col-md-5" align="center">
+					<a href="/pad/<%= project._id%>" ><button type="button" class="btn btn-default" style="margin-top: 20px; margin-bottom: 20px">Management Panel</button></a>
+				</div>
+				<div class="col-md-7" align ="center">
+					<a href="/project/<%= project._id%>/comment/new" ><button type="button" class="btn btn-default" style="margin-top: 20px; margin-bottom: 20px">Add comment</button></a>
+				</div>
+			</div>
+		</div>
+		<% comment.forEach(function(com){ %>
+			<div class = "container" style = "border: 1px solid lightgrey; background: lightgrey; margin-bottom: 5px">
+				<div class="media">
+					<div class="media-left">
+						<a href="#">
+							<img class="media-object" src="..." alt="...">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading"><%= com.name%> - <%= com.star%></h4>
+						<%= com.content%>
+					</div>
+				</div>
+			</div>
+		<% })%>
+	</div>
+	
+<%- include("partials/footer") %>

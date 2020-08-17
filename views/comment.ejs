@@ -1,0 +1,53 @@
+<%- include("partials/headerPre") %>
+<style>
+    body{
+    width: 1500px;
+    height: 800px;
+    margin: 0px;
+    background: beige
+        margin: 0;
+        padding: 0;
+        background: url('http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG');
+        repeat: no-repeat;
+        background-attachment:fixed;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.1ppt.com/uploads/allimg/1901/1_190115190334_1.JPG', sizingMethod='scale');
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover
+	}
+   
+</style>
+<%- include("partials/headerPost") %>
+<%- include("partials/navbar") %>
+<form action="/project/<%= id %>/comment/new" method="POST">
+    <textarea class = "abc"  name="content" placeholder="                                                                                                   Make some comments."    style = "margin-left: 450px;
+    border:1px ;
+    width:600px;
+    height:300px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:150px;
+    font-size:24px;
+	line-height: 50px"></textarea>
+    <input type="number" name="star" placeholder="Rate the project." style = "    margin-left: 625px;
+    border:1px ;
+    width:250px;
+    height:50px;
+    display:block;
+    border-radius:30px;
+    text-align:center;
+    margin-top:100px;
+    font-size:24px">
+    <button id = "touch" style = "background:#FC3;
+    width:100px;
+    height:36px;
+    margin-top:50px;
+    margin-left:1000px;
+    background-color: #428bca;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    border-radius:30px">Submit</button>
+</form>
+<%- include("partials/footer") %>

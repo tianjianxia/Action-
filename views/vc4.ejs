@@ -1,0 +1,40 @@
+	<%- include("partials/headerPre") %>
+	</head>
+	<body>	
+	<ul class="nav nav-tabs">
+     <li role="presentation"><a href="/pad/<%= projectId %>">Editor</a ></li>
+     <li role="presentation" class="active"><a href="#">Version Control</a ></li>
+     <li role="presentation"><a href="/crowdfund/<%= projectId %>">Crowdfunding</a ></li>
+     <li role="presentation"><a href="#">Manage Project</a ></li>
+     <li role="presentation"><a href="/"><button>Exit</button></a ></li>
+ 	</ul>
+<div class = "rows">
+     <div class="col-md-7 left aligned" style = "padding-top: 25px">
+        <div>
+            <p style="font-size: xx-large">User</p >
+            <p style="font-size: xx-large">├─ oranges</p >
+            <p style="font-size: xx-large">│        └─ tasty orange</p >
+            <p style="font-size: xx-large">│        ├─ expensive orange</p >
+            <p style="font-size: xx-large">│        └─ cheap orange</p >
+			<p style="font-size: xx-large">└─ apples</p>
+			<p style="font-size: xx-large; margin-left: 30px">                  ├─ gala apple</p>
+			<p style="font-size: xx-large; margin-left: 30px">                  └─ <a href="/pad/5e9e1056cccf7c29c9423ad9">big apple</a></p>
+        </div>
+         <a href="/vc/id/4"><button style ="font-size: xx-large;margin-top: 200px">Version Forward</button></a>
+		 <a href="/vc/id/2"><button style ="font-size: xx-large;margin-left: 20px; margin-top: 200px">Version Recursive</button></a>
+    </div>
+    <div class="col-md-5 left aligned" style = "padding-top: 25px">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Current Branch <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/vc/id/3">user1(zhangpeng: 5e9e04e12d474e29b311ad2e)</a ></li>
+                <li><a href="/vc/id/3">user2(test1: 5e9be71b88b3715368079c54)</a ></li>
+                <li><a href="/vc/id/3">user3(test2: 5e9be72988b3715368079c56)</a ></li>
+            </ul>
+        </div>
+    </div>
+</div>
+	
+	<%- include("partials/footer") %>

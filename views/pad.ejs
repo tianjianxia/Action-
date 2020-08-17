@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Action!</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		form {
+			height: 90%;
+		}
+		html, body, section, .full-height {
+    		height: 100%;
+		} 
+
+		#pad{
+			font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+			border: none;
+			border-top:1px solid black;
+			border-bottom: 1px solid black;
+			overflow: auto;
+			outline: none;
+			resize: none;
+
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+
+		#markdown {
+			overflow: auto;
+			border-top:1px solid black;
+			border-left: 1px solid black;
+			border-bottom: 1px solid black;
+		}
+		
+		#sub {
+			width: 70%;
+			margin-left: 250px;
+		}
+		
+		#example{
+			margin-left: 100px;
+		}
+		
+		#ex{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var converter = new showdown.Converter();
+			var pad = document.getElementById('pad');
+			var markdownArea = document.getElementById('markdown');   
+
+			var convertTextAreaToMarkdown = function(){
+				var markdownText = pad.value;
+				html = converter.makeHtml(markdownText);
+				markdownArea.innerHTML = html;
+			};
+
+			pad.addEventListener('input', convertTextAreaToMarkdown);
+
+			convertTextAreaToMarkdown();
+		};
+
+	</script>
+</head>
+
+<body class="container-fluid">
+	<ul class="nav nav-tabs">
+  	<li role="presentation" class="active"><a href="#">Editor</a></li>
+  	<li role="presentation"><a href="/vc/<%= projectId %>">Version Control</a></li>
+  	<li role="presentation"><a href="/crowdfund/<%= projectId %>">Crowdfunding</a></li>
+	<li role="presentation"><a href="#">Manage Project</a></li>
+	<li role="presentation"><a href="/"><button id="ex">Exit</button></a></li>
+	</ul>
+	
+	<form action="/pad/<%= projectId %>" method="post">
+		<section class="row">
+			<textarea class="col-md-6 full-height" id="pad" name="content"><%= pass %></textarea>
+			<div class="col-md-6 full-height" id="markdown"></div>
+		</section>
+		<button id="sub" class="btn btn-success btn-xs">Contribute to this project.</button>
+		<a href="#" id="example" class="btn btn-success" rel="popover" data-content="为我的网站创建一个提示框如此简单！" data-original-title="Bootstrap弹出框">Tutorial</a>
+	</form>
+
+	
+	
+
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+</body>
+</html>

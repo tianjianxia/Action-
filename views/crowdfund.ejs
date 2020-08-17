@@ -1,0 +1,21 @@
+<%- include("partials/headerPre") %>
+	</head>
+	<body>
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href=" >">Editor</a></li>
+    <li role="presentation"><a href="/vc/<%= projectId %>">Version Control</a></li>
+    <li role="presentation" class="active"><a href="#">Crowdfunding</a></li>
+    <li role="presentation"><a href="#">Manage Project</a></li>
+    <li role="presentation"><a href="/"><button>Exit</button></a></li>
+</ul>
+<div class ="container">
+    <div class="progress" style="margin-top: 250px">
+        <div class="progress-bar" role="progressbar" aria-valuenow="<%= str %>" aria-valuemin="0" aria-valuemax="100">
+            <span class="sr-only">60% Complete</span>
+        </div>
+    </div>
+</div>
+<div align="center">
+<a href="/pay/<%= projectId %>"><button class="btn btn-default">Pay</button></a>
+</div>
+<%- include("partials/footer") %>
